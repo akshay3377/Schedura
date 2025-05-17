@@ -1,10 +1,11 @@
-// app/[username]/[eventId]/page.jsx
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getEventDetails } from "@/actions/events";
 import { getEventAvailability } from "@/actions/availability";
 import EventDetails from "./_components/event-details";
 import BookingForm from "./_components/booking-form";
+
+import { Card } from "@/components/ui/card";
 
 export async function generateMetadata({ params }) {
   const event = await getEventDetails(params.username, params.eventId);
@@ -30,11 +31,18 @@ export default async function EventBookingPage({ params }) {
   }
 
   return (
-    <div className="flex flex-col justify-center lg:flex-row px-4 py-8">
-      <EventDetails event={event} />
-      <Suspense fallback={<div>Loading booking form...</div>}>
-        <BookingForm event={event} availability={availability} />
-      </Suspense>
+    <div className="min-h-[70vh] w-full flex justify-center  mt-8">
+      <Card
+        className={`border flex flex-col md:flex-row   rounded-lg transition-all duration-300`}
+      >
+        <div className="p-6  w-full md:w-[300px]">
+          <EventDetails event={event} />
+        </div>
+
+        <Suspense fallback={<div>Loading booking form...</div>}>
+          <BookingForm event={event} availability={availability} />
+        </Suspense>
+      </Card>
     </div>
   );
 }

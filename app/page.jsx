@@ -42,7 +42,7 @@ const howItWorks = [
 
 const Home = () => {
   return (
-    <main className="container mx-auto px-4 py-16">
+    <main className="container mx-auto px-4 py-16 hidden">
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-24">
         <div className="lg:w-1/2">

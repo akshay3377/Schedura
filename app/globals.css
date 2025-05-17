@@ -104,3 +104,112 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+
+
+/* Navigation buttons and chevron icon styling */
+.rdp-button_previous,
+.rdp-button_next {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+}
+
+/* Hover effect */
+.rdp-button_previous:hover,
+.rdp-button_next:hover {
+  background-color: #262626; /* e.g., Tailwind's zinc-800 */
+}
+
+/* Chevron icon */
+.rdp-chevron {
+  display: inline-block;
+  fill: gray !important; /* default chevron color */
+  width: 14px;
+  height: 14px;
+}
+
+/* Change chevron color on button hover */
+.rdp-button_previous:hover .rdp-chevron,
+.rdp-button_next:hover .rdp-chevron {
+  fill: white !important;
+}
+
+.rdp-weekday th{
+  color: #FAFAFA !important; /* text-gray-400 */
+}
+
+
+
+/* Wrap DayPicker with a container if needed */
+.daypicker-container {
+  padding: 1.5rem;         /* Adds internal spacing */
+  max-width: 22rem;        /* Optional: control width */
+  margin: auto;            /* Center the calendar */
+}
+
+/* DayPicker root spacing */
+.rdp {
+  display: inline-block;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+/* Header (month + nav) */
+.rdp-caption {
+  margin-bottom: 1rem;     /* Space below month title */
+  text-align: center;
+}
+
+/* Weekday row */
+.rdp-head {
+  margin-bottom: 0.5rem;
+}
+
+/* Grid spacing: space between rows and columns */
+.rdp-table {
+  border-spacing: 0.75rem; /* Creates spacing between days */
+}
+
+/* Individual day cells */
+.rdp-day {
+  padding:  0.4rem ;
+
+  color: white; 
+  border-radius: 8px !important; 
+}
+
+
+
+
+
+
+
+
+.my-today {
+  color: white !important;
+  font-weight: bold;
+  position: relative; /* for the dot positioning */
+}
+
+/* The small dot below the date */
+.my-today::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;       /* distance from bottom */
+  left: 50%;         /* center horizontally */
+  transform: translateX(-50%);
+  width: 6px;        /* dot size */
+  height: 6px;
+  background-color: white; /* same color as text */
+  border-radius: 50%;
+}
+
+
+
+.rdp-month_grid {
+  border-collapse: separate !important; /* allows spacing */
+  border-spacing: 4px !important; /* horizontal and vertical spacing between date cells */
+}
