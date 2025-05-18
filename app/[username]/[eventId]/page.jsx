@@ -32,17 +32,17 @@ export default async function EventBookingPage({ params }) {
 
   return (
     <div className="w-full flex justify-center  mt-8">
-      <Card
-        className={`border flex flex-col md:flex-row   rounded-lg transition-all duration-300`}
+      <div
+        className={`w-full md:w-fit md:border flex flex-col md:flex-row   rounded-lg transition-all duration-300`}
       >
-        <div className="p-6  w-full md:w-[300px]">
+        <div className="p-6   w-full md:w-[300px]">
           <EventDetails event={event} />
         </div>
 
         <Suspense fallback={<div>Loading booking form...</div>}>
           <BookingForm event={event} availability={availability} />
         </Suspense>
-      </Card>
+      </div>
     </div>
   );
 }

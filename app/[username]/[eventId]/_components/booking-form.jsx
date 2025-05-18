@@ -310,10 +310,11 @@ export default function BookingForm({ event, availability }) {
       {/* Show date & time selection if time is not selected */}
       {!selectedTime && (
         <>
-          <div className="border-r border-l w-dull md:w-[470px]">
-            <div className="w-full h-full flex justify-center p-6">
+          <div className="md:border-r  px-4 pt-4 pb-8 md:pb-20 md:border-l w-full md:w-[470px]">
+            <div className="w-full h-full flex justify-center ">
               <DayPicker
-                weekStartsOn={0} // Sunday
+          
+                weekStartsOn={0} 
                 formatters={{
                   formatWeekdayName: (day) =>
                     day.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase(),
@@ -338,7 +339,7 @@ export default function BookingForm({ event, availability }) {
           </div>
 
           {selectedDate && (
-            <div className="w-full md:w-[300px] p-4 md:overflow-scroll no-scrollbar">
+            <div className="w-full md:w-[300px] p-6 md:overflow-scroll no-scrollbar">
               <div className="mb-4">
                 <h3 className="text-md font-semibold mb-4">{format(selectedDate, "EEE dd")}</h3>
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">

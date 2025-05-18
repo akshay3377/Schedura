@@ -15,7 +15,7 @@ export default function Form({ formMethods, onSubmit, handleBack, loading }) {
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-4 w-full md:w-[400px] px-4 mx-auto border-l py-12"
+      className="space-y-4  w-full md:w-[400px] px-4 mx-auto border-l py-12"
     >
       <div className="space-y-1">
         <Label  htmlFor="name">Name *</Label>

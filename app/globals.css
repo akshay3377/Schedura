@@ -105,8 +105,6 @@
   }
 }
 
-
-
 /* Navigation buttons and chevron icon styling */
 .rdp-button_previous,
 .rdp-button_next {
@@ -137,61 +135,25 @@
   fill: white !important;
 }
 
-.rdp-weekday th{
-  color: #FAFAFA !important; /* text-gray-400 */
-}
-
-
-
-/* Wrap DayPicker with a container if needed */
-.daypicker-container {
-  padding: 1.5rem;         /* Adds internal spacing */
-  max-width: 22rem;        /* Optional: control width */
-  margin: auto;            /* Center the calendar */
-}
-
-/* DayPicker root spacing */
-.rdp {
-  display: inline-block;
-  width: 100%;
-  font-family: sans-serif;
-}
-
-/* Header (month + nav) */
-.rdp-caption {
-  margin-bottom: 1rem;     /* Space below month title */
-  text-align: center;
-}
-
-/* Weekday row */
-.rdp-head {
-  margin-bottom: 0.5rem;
-}
-
-/* Grid spacing: space between rows and columns */
-.rdp-table {
-  border-spacing: 0.75rem; /* Creates spacing between days */
-}
-
-/* Individual day cells */
 .rdp-day {
-  padding:  0.4em ;
-
   font-size: 14px !important;
-  border-radius: 8px !important; 
+  border-radius: 8px !important;
+  padding: 0 !important; /* Default padding for mobile */
 }
+
+@media (min-width: 1200px) {
+  .rdp-day {
+    padding: 0.4em !important; /* Larger padding for desktops */
+  }
+}
+
 
 .rdp-caption_label {
   font-size: 1rem;
   color: white;
   font-weight: 600;
-      
-
   letter-spacing: 0.5px;
 }
-
-
-
 
 .available-day {
   border: 2px solid transparent;
@@ -207,8 +169,6 @@
   color: black !important;
 }
 
-
-
 .my-today {
   color: white !important;
   font-weight: bold;
@@ -217,18 +177,16 @@
 
 /* The small dot below the date */
 .my-today::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 8px;       /* distance from bottom */
-  left: 50%;         /* center horizontally */
+  bottom: 8px; /* distance from bottom */
+  left: 50%; /* center horizontally */
   transform: translateX(-50%);
-  width: 6px;        /* dot size */
+  width: 6px; /* dot size */
   height: 6px;
   background-color: white; /* same color as text */
   border-radius: 50%;
 }
-
-
 
 .rdp-month_grid {
   border-collapse: separate !important; /* allows spacing */
