@@ -31,7 +31,7 @@ export default async function EventBookingPage({ params }) {
   }
 
   return (
-    <div className="min-h-[70vh] w-full flex justify-center  mt-8">
+    <div className="w-full flex justify-center  mt-8">
       <Card
         className={`border flex flex-col md:flex-row   rounded-lg transition-all duration-300`}
       >

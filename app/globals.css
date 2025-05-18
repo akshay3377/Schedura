@@ -175,16 +175,37 @@
 
 /* Individual day cells */
 .rdp-day {
-  padding:  0.4rem ;
+  padding:  0.4em ;
 
-  color: white; 
+  font-size: 14px !important;
   border-radius: 8px !important; 
+}
+
+.rdp-caption_label {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+      
+
+  letter-spacing: 0.5px;
 }
 
 
 
 
+.available-day {
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
 
+.available-day:hover {
+  border: 2px solid white;
+}
+
+.available-day.selected-day {
+  background-color: white !important;
+  color: black !important;
+}
 
 
 
