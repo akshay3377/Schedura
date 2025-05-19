@@ -5,8 +5,6 @@ import { getEventAvailability } from "@/actions/availability";
 import EventDetails from "./_components/event-details";
 import BookingForm from "./_components/booking-form";
 
-import { Card } from "@/components/ui/card";
-
 export async function generateMetadata({ params }) {
   const event = await getEventDetails(params.username, params.eventId);
 
@@ -17,7 +15,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `Book ${event.title} with ${event.user.name} | Your App Name`,
+    title: `Book ${event.title} with ${event.user.name} | Schedura`,
     description: `Schedule a ${event.duration}-minute ${event.title} event with ${event.user.name}.`,
   };
 }

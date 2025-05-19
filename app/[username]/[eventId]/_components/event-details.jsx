@@ -23,6 +23,9 @@ export default function EventDetails({ event }) {
   return (
     <div className="">
       <div className="flex flex-col space-y-3">
+        <h1 className="text-3xl font-bold ">{event.title}</h1>
+        <p className="text-sm font-medium">{event.description}</p>
+
         <Avatar className="w-7 h-7 ">
           <AvatarImage src={user.imageUrl} alt={user.name} />
           <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
@@ -31,14 +34,15 @@ export default function EventDetails({ event }) {
           <h2 className="text-md font-semibold">{user.name}</h2>
         </div>
 
-        <h1 className="text-3xl font-bold ">{event.title}</h1>
-
         {dateFormatted && selectedTime && (
           <div className="flex text-sm">
             <Calendar className="mr-2 h-4 w-4" />
             <div>
               <p className="mb-1">{dateFormatted}</p>
-              <TimeRangeDisplay start={selectedTime} duration={event.duration} />
+              <TimeRangeDisplay
+                start={selectedTime}
+                duration={event.duration}
+              />
             </div>
           </div>
         )}
@@ -52,8 +56,6 @@ export default function EventDetails({ event }) {
           <Video className="mr-2 h-4 w-4" />
           <span>Google Meet</span>
         </div>
-
-        <p className="text-sm font-medium">{event.description}</p>
       </div>
     </div>
   );
@@ -61,7 +63,8 @@ export default function EventDetails({ event }) {
 
 // ✅ TimeRangeDisplay as a proper component
 function TimeRangeDisplay({ start, duration }) {
-  if (!start) return <p className="text-sm text-muted-foreground">No time selected</p>;
+  if (!start)
+    return <p className="text-sm text-muted-foreground">No time selected</p>;
 
   const end = addMinutes(start, duration); // use minutes from `event.duration`
 
